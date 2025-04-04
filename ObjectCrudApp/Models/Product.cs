@@ -4,6 +4,7 @@ namespace ObjectCrudApp.Models
 {
     public class Product
     {
+        [Display(Name="SN")]
         public int Id { get; set;}
 
         [Display(Name="NepaliNaam")]

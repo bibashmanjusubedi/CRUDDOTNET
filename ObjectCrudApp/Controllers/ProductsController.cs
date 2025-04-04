@@ -47,10 +47,22 @@ namespace ObjectCrudApp.Controllers
         // POST: Products/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name")] Product product)
+        public async Task<IActionResult> Create([Bind("Id,Name,Price")] Product product)
         {
             if (ModelState.IsValid)
             {
+                // Check if there are any existing products
+                if(!_context.Products.Any())
+                {
+                    product.Id = 1;// If none, set ID to 1
+                }
+                else
+                {
+                    // Get the hightest current ID and add 1
+                    int maxId = _context.Products.Max(p=> p.Id);
+                    product.Id = maxId + 1;
+                }
+
                 _context.Add(product);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -77,7 +89,7 @@ namespace ObjectCrudApp.Controllers
         // POST: Products/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name")] Product product)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Price")] Product product)
         {
             if (id != product.Id)
             {

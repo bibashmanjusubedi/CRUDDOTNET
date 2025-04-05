@@ -3,6 +3,72 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4"><b>Welcome</b></h1>
+    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">This is a Phone store</a>.</p>
+</div>
+<h1 align="Center">List of Phones available in our store</h1>
+<style>
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    max-width: 700px;
+    margin: auto;
+  }
+
+  .grid-item {
+    text-align: center;
+  }
+
+  .grid-item img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+  .grid-item p {
+    margin-top: 8px;
+    font-weight: 500;
+    font-size: 1rem;
+  }
+</style>
+
+<div class="grid">
+    <div class="grid-item">
+        <img src="~/images/iphone.jpg" alt="iPhone" />
+        <p>iPhone</p>
+    </div>
+    <div class="grid-item">
+        <img src="~/images/samsung.jpeg" alt="Samsung" />
+        <p>Samsung</p>
+    </div>
+    <div class="grid-item">
+        <img src="~/images/motorola.jpeg" alt="Motorola" />
+        <p>Motorola</p>
+    </div>
+    <div class="grid-item">
+        <img src="~/images/sony.jpeg" alt="Sony" />
+        <p>Sony</p>
+    </div>
+    <div class="grid-item">
+        <img src="~/images/huawei.jpg" alt="Huawei" />
+        <p>Huawei</p>
+    </div>
+    <div class="grid-item">
+        <img src="~/images/redmi.jpeg" alt="Redmi" />
+        <p>Redmi</p>
+    </div>
+    <div class="grid-item">
+        <img src="~/images/xaoimi.jpeg" alt="Xiaomi" />
+        <p>Xiaomi</p>
+    </div>
+    <div class="grid-item">
+        <img src="~/images/blackberry.jpeg" alt="BlackBerry" />
+        <p>BlackBerry</p>
+    </div>
+    <div class="grid-item">
+        <img src="~/images/lg.jpeg" alt="LG" />
+        <p>LG</p>
+    </div>
 </div>
